@@ -1,0 +1,3 @@
+# Ignore model artifacts and large binaries
+results/artifacts/
+*.joblib
