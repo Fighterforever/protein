@@ -1,0 +1,27 @@
+Samples: 714
+Protein columns: 177
+Meta feature columns: 23
+Missing values in meta features:
+  Surface modification: 0
+  SizeTEM (nm): 0
+  Zeta potential: 0
+  Incubation protein source: 0
+  Incubation plasma concentration (v/v%): 0
+  Incubation NP concentration (mg/L): 0
+  Centrifugation speed (g): 0
+  Centrifugation time （min）: 0
+  Certrifugation temperature (℃): 0
+  NP type: 0
+  NP shape: 0
+  Dispersion medium: 0
+  Dispersion medium pH: 0
+  SizeDLS (nm): 0
+  PDI: 0
+  Incubation culture: 0
+  Incubation time (h): 0
+  Incubation temperature (℃): 0
+  Centrifugation repetitions: 0
+  Modification type: 0
+  B9A064 Immunoglobulin lambda-like polypeptide 5免疫球蛋白 lambda样: 0
+  α-1-antiproteinase 抗蛋白酶: 0
+  Titin 肌联蛋白: 0

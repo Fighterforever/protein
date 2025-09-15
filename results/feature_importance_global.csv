@@ -1,0 +1,21 @@
+feature,importance
+Blood concentration - Conc. blood MS [pg/L],0.0357352
+B9A064 Immunoglobulin lambda-like polypeptide 5免疫球蛋白 lambda样*RNA mouse brain regional specificity score,0.021206295
+Dispersion medium pH*Blood concentration - Conc. blood IM [pg/L],0.01760097
+Interactions,0.01613909
+Incubation culture_ mouse plasma,0.015258142
+Centrifugation repetitions*RNA mouse brain regional specificity score,0.0152306445
+RNA blood lineage specificity score,0.014049887
+Zeta potential*RNA pig brain regional specificity score,0.012978271
+Zeta potential*RNA blood cell specificity score,0.011401441
+Blood concentration - Conc. blood IM [pg/L],0.010450909
+α-1-antiproteinase 抗蛋白酶*RNA pig brain regional specificity score,0.010223247
+RNA cell line specificity score,0.009871956
+RNA pig brain regional specificity score,0.009405791
+Zeta potential*RNA cell line specificity score,0.008392666
+SizeTEM (nm)*RNA cell line specificity score,0.008272792
+RNA single cell type specificity score,0.008154033
+Centrifugation speed (g)*RNA blood cell specificity score,0.008137962
+Certrifugation temperature (℃)*RNA brain regional specificity score,0.008029441
+RNA cancer specificity score,0.00797709
+Dispersion medium pH*RNA blood cell specificity score,0.007933587

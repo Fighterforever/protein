@@ -1,0 +1,5 @@
+model,ndcg5,target,use_prot,use_inter,moe,ranker
+Baseline,0.3254644443209734,CLR,True,True,False,False
+MoE,0.36610422201235343,CLR,True,True,True,False
+Ridge,0.36610422201235343,CLR,True,True,False,False
+XGBRanker,0.6368860461011895,CLR,True,True,False,True

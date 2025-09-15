@@ -1,0 +1,21 @@
+feature,mean_abs_shap
+Blood concentration - Conc. blood MS [pg/L],0.45501435
+Blood concentration - Conc. blood IM [pg/L],0.09028863
+Interactions,0.08609056
+RNA blood cell specificity score,0.055805415
+RNA single cell type specificity score,0.03941943
+Incubation protein source_RP,0.03601493
+RNA blood lineage specificity score,0.032020763
+RNA tissue specificity score,0.029794423
+Incubation culture_mouse serum,0.02777332
+RNA cancer specificity score,0.024092989
+Incubation NP concentration (mg/L)*Interactions,0.023093903
+SizeDLS (nm)*Blood concentration - Conc. blood MS [pg/L],0.021170588
+RNA brain regional specificity score,0.020289643
+RNA cell line specificity score,0.019222874
+Centrifugation time （min）*Interactions,0.018273564
+Incubation NP concentration (mg/L),0.017590435
+SizeTEM (nm)*RNA cell line specificity score,0.016186954
+Zeta potential*RNA single cell type specificity score,0.015664818
+Centrifugation time （min）,0.014949106
+Centrifugation speed (g)*RNA cancer specificity score,0.0145762535
