@@ -1,0 +1,11 @@
+torch
+fair-esm
+biopython
+pandas
+numpy
+pyarrow
+tqdm
+scikit-learn
+openpyxl
+requests
+einops

@@ -1,0 +1,5 @@
+feature_set,n_features,auroc,features
+Baseline,121,0.621,"le100_0, le100_1, le100_2, le100_3, le100_4..."
+ESM2,1280,1.78,"esm2_0, esm2_1, esm2_2, esm2_3, esm2_4..."
+LE,121,0.621,"le100_0, le100_1, le100_2, le100_3, le100_4..."
+ALL,1401,1.901,"esm2_0, esm2_1, esm2_2, esm2_3, esm2_4..."

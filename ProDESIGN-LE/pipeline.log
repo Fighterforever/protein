@@ -1,0 +1,269 @@
+2025-09-13 11:37:25,722 - INFO - Running complete pipeline...
+2025-09-13 11:37:25,722 - INFO - Creating protein index...
+2025-09-13 11:37:26,171 - ERROR - Pipeline failed: 'protein_id'
+2025-09-13 11:37:51,287 - INFO - Running complete pipeline...
+2025-09-13 11:37:51,288 - INFO - Creating protein index...
+2025-09-13 11:37:51,720 - INFO - Created index with 179 proteins and 22 metadata columns
+2025-09-13 11:37:51,720 - INFO - Fetching protein sequences...
+2025-09-13 11:37:55,136 - WARNING - Error fetching sequence for P01859: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,137 - WARNING - Error fetching sequence for P01857: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,137 - WARNING - Error fetching sequence for P01861: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,137 - WARNING - Error fetching sequence for P01876: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,137 - WARNING - Error fetching sequence for P02768: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,138 - WARNING - Error fetching sequence for P01860: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,140 - WARNING - Error fetching sequence for P01877: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,141 - WARNING - Error fetching sequence for P01871: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,144 - WARNING - Error fetching sequence for P0DOY2: 'list' object has no attribute 'read'
+2025-09-13 11:37:55,146 - WARNING - Error fetching sequence for P0DOY3: 'list' object has no attribute 'read'
+2025-09-13 11:37:56,821 - WARNING - Error fetching sequence for P01766: 'list' object has no attribute 'read'
+2025-09-13 11:37:56,867 - WARNING - Error fetching sequence for P01700: 'list' object has no attribute 'read'
+2025-09-13 11:37:56,897 - WARNING - Error fetching sequence for P06312: 'list' object has no attribute 'read'
+2025-09-13 11:37:56,913 - WARNING - Error fetching sequence for P04433: 'list' object has no attribute 'read'
+2025-09-13 11:37:57,444 - WARNING - Error fetching sequence for P01701: 'list' object has no attribute 'read'
+2025-09-13 11:37:57,473 - WARNING - Error fetching sequence for P01619: 'list' object has no attribute 'read'
+2025-09-13 11:37:57,505 - WARNING - Error fetching sequence for P01593: 'list' object has no attribute 'read'
+2025-09-13 11:37:57,684 - WARNING - Error fetching sequence for P01764: 'list' object has no attribute 'read'
+2025-09-13 11:37:58,501 - WARNING - Error fetching sequence for P01599: 'list' object has no attribute 'read'
+2025-09-13 11:37:58,569 - WARNING - Error fetching sequence for P01615: 'list' object has no attribute 'read'
+2025-09-13 11:37:58,578 - WARNING - Error fetching sequence for B9A064: 'list' object has no attribute 'read'
+2025-09-13 11:37:58,633 - WARNING - Error fetching sequence for P80748: 'list' object has no attribute 'read'
+2025-09-13 11:37:59,411 - WARNING - Error fetching sequence for P02647: 'list' object has no attribute 'read'
+2025-09-13 11:37:59,437 - WARNING - Error fetching sequence for P01591: 'list' object has no attribute 'read'
+2025-09-13 11:37:59,599 - WARNING - Error fetching sequence for P02652: 'list' object has no attribute 'read'
+2025-09-13 11:37:59,616 - WARNING - Error fetching sequence for P08519: 'list' object has no attribute 'read'
+2025-09-13 11:38:00,454 - WARNING - Error fetching sequence for P02649: 'list' object has no attribute 'read'
+2025-09-13 11:38:00,576 - WARNING - Error fetching sequence for P06727: 'list' object has no attribute 'read'
+2025-09-13 11:38:00,706 - WARNING - Error fetching sequence for Q6Q788: 'list' object has no attribute 'read'
+2025-09-13 11:38:00,746 - WARNING - Error fetching sequence for P02656: 'list' object has no attribute 'read'
+2025-09-13 11:38:01,445 - WARNING - Error fetching sequence for P02654: 'list' object has no attribute 'read'
+2025-09-13 11:38:01,609 - WARNING - Error fetching sequence for P04114: 'list' object has no attribute 'read'
+2025-09-13 11:38:01,702 - WARNING - Error fetching sequence for P02655: 'list' object has no attribute 'read'
+2025-09-13 11:38:01,838 - WARNING - Error fetching sequence for P55056: 'list' object has no attribute 'read'
+2025-09-13 11:38:02,435 - WARNING - Error fetching sequence for Q13790: 'list' object has no attribute 'read'
+2025-09-13 11:38:02,493 - WARNING - Error fetching sequence for P05090: 'list' object has no attribute 'read'
+2025-09-13 11:38:02,689 - WARNING - Error fetching sequence for O14791: 'list' object has no attribute 'read'
+2025-09-13 11:38:02,792 - WARNING - Error fetching sequence for O95445: 'list' object has no attribute 'read'
+2025-09-13 11:38:03,431 - WARNING - Error fetching sequence for P00734: 'list' object has no attribute 'read'
+2025-09-13 11:38:03,437 - WARNING - Error fetching sequence for P01011: 'list' object has no attribute 'read'
+2025-09-13 11:38:03,485 - WARNING - Error fetching sequence for P04004: 'list' object has no attribute 'read'
+2025-09-13 11:38:03,612 - WARNING - Error fetching sequence for P10909: 'list' object has no attribute 'read'
+2025-09-13 11:38:04,448 - WARNING - Error fetching sequence for P06396: 'list' object has no attribute 'read'
+2025-09-13 11:38:04,469 - WARNING - Error fetching sequence for P12259: 'list' object has no attribute 'read'
+2025-09-13 11:38:04,470 - WARNING - Error fetching sequence for P01008: 'list' object has no attribute 'read'
+2025-09-13 11:38:04,492 - WARNING - Error fetching sequence for P00742: 'list' object has no attribute 'read'
+2025-09-13 11:38:05,483 - WARNING - Error fetching sequence for P00748: 'list' object has no attribute 'read'
+2025-09-13 11:38:05,507 - WARNING - Error fetching sequence for P00740: 'list' object has no attribute 'read'
+2025-09-13 11:38:05,552 - WARNING - Error fetching sequence for P03951: 'list' object has no attribute 'read'
+2025-09-13 11:38:05,595 - WARNING - Error fetching sequence for P04264: 'list' object has no attribute 'read'
+2025-09-13 11:38:06,431 - WARNING - Error fetching sequence for P35527: 'list' object has no attribute 'read'
+2025-09-13 11:38:06,442 - WARNING - Error fetching sequence for P08709: 'list' object has no attribute 'read'
+2025-09-13 11:38:06,455 - WARNING - Error fetching sequence for P00488: 'list' object has no attribute 'read'
+2025-09-13 11:38:06,510 - WARNING - Error fetching sequence for P35908: 'list' object has no attribute 'read'
+2025-09-13 11:38:07,487 - WARNING - Error fetching sequence for P02533: 'list' object has no attribute 'read'
+2025-09-13 11:38:07,515 - WARNING - Error fetching sequence for P13645: 'list' object has no attribute 'read'
+2025-09-13 11:38:07,708 - WARNING - Error fetching sequence for P01042: 'list' object has no attribute 'read'
+2025-09-13 11:38:07,778 - WARNING - Error fetching sequence for P02787: 'list' object has no attribute 'read'
+2025-09-13 11:38:08,506 - WARNING - Error fetching sequence for P01009: 'list' object has no attribute 'read'
+2025-09-13 11:38:08,632 - WARNING - Error fetching sequence for P01023: 'list' object has no attribute 'read'
+2025-09-13 11:38:08,792 - WARNING - Error fetching sequence for P04196: 'list' object has no attribute 'read'
+2025-09-13 11:38:08,984 - WARNING - Error fetching sequence for P02766: 'list' object has no attribute 'read'
+2025-09-13 11:38:09,445 - WARNING - Error fetching sequence for P00751: 'list' object has no attribute 'read'
+2025-09-13 11:38:09,456 - WARNING - Error fetching sequence for P08603: 'list' object has no attribute 'read'
+2025-09-13 11:38:09,480 - WARNING - Error fetching sequence for P00746: 'list' object has no attribute 'read'
+2025-09-13 11:38:09,577 - WARNING - Error fetching sequence for P01024: 'list' object has no attribute 'read'
+2025-09-13 11:38:10,418 - WARNING - Error fetching sequence for P07360: 'list' object has no attribute 'read'
+2025-09-13 11:38:10,425 - WARNING - Error fetching sequence for P07357: 'list' object has no attribute 'read'
+2025-09-13 11:38:10,468 - WARNING - Error fetching sequence for P0C0L4: 'list' object has no attribute 'read'
+2025-09-13 11:38:10,482 - WARNING - Error fetching sequence for P05156: 'list' object has no attribute 'read'
+2025-09-13 11:38:11,495 - WARNING - Error fetching sequence for P01031: 'list' object has no attribute 'read'
+2025-09-13 11:38:11,524 - WARNING - Error fetching sequence for P0C0L5: 'list' object has no attribute 'read'
+2025-09-13 11:38:11,545 - WARNING - Error fetching sequence for P07358: 'list' object has no attribute 'read'
+2025-09-13 11:38:11,709 - WARNING - Error fetching sequence for P13671: 'list' object has no attribute 'read'
+2025-09-13 11:38:12,486 - WARNING - Error fetching sequence for P02745: 'list' object has no attribute 'read'
+2025-09-13 11:38:12,487 - WARNING - Error fetching sequence for P09871: 'list' object has no attribute 'read'
+2025-09-13 11:38:12,541 - WARNING - Error fetching sequence for P02748: 'list' object has no attribute 'read'
+2025-09-13 11:38:12,570 - WARNING - Error fetching sequence for P10643: 'list' object has no attribute 'read'
+2025-09-13 11:38:13,420 - WARNING - Error fetching sequence for P00736: 'list' object has no attribute 'read'
+2025-09-13 11:38:13,420 - WARNING - Error fetching sequence for P02746: 'list' object has no attribute 'read'
+2025-09-13 11:38:13,480 - WARNING - Error fetching sequence for P02747: 'list' object has no attribute 'read'
+2025-09-13 11:38:13,580 - WARNING - Error fetching sequence for Q9BXR6: 'list' object has no attribute 'read'
+2025-09-13 11:38:14,487 - WARNING - Error fetching sequence for P08697: 'list' object has no attribute 'read'
+2025-09-13 11:38:14,520 - WARNING - Error fetching sequence for Q03591: 'list' object has no attribute 'read'
+2025-09-13 11:38:14,627 - WARNING - Error fetching sequence for P02671: 'list' object has no attribute 'read'
+2025-09-13 11:38:14,772 - WARNING - Error fetching sequence for P02675: 'list' object has no attribute 'read'
+2025-09-13 11:38:15,458 - WARNING - Error fetching sequence for P02679: 'list' object has no attribute 'read'
+2025-09-13 11:38:15,463 - WARNING - Error fetching sequence for P04217: 'list' object has no attribute 'read'
+2025-09-13 11:38:15,586 - WARNING - Error fetching sequence for P00747: 'list' object has no attribute 'read'
+2025-09-13 11:38:15,791 - WARNING - Error fetching sequence for P02749: 'list' object has no attribute 'read'
+2025-09-13 11:38:16,415 - WARNING - Error fetching sequence for P02765: 'list' object has no attribute 'read'
+2025-09-13 11:38:16,443 - WARNING - Error fetching sequence for P19827: 'list' object has no attribute 'read'
+2025-09-13 11:38:16,465 - WARNING - Error fetching sequence for Q14624: 'list' object has no attribute 'read'
+2025-09-13 11:38:16,518 - WARNING - Error fetching sequence for P02763: 'list' object has no attribute 'read'
+2025-09-13 11:38:17,417 - WARNING - Error fetching sequence for P19823: 'list' object has no attribute 'read'
+2025-09-13 11:38:17,425 - WARNING - Error fetching sequence for P68871: 'list' object has no attribute 'read'
+2025-09-13 11:38:17,576 - WARNING - Error fetching sequence for Q06033: 'list' object has no attribute 'read'
+2025-09-13 11:38:17,702 - WARNING - Error fetching sequence for P04003: 'list' object has no attribute 'read'
+2025-09-13 11:38:18,419 - WARNING - Error fetching sequence for P02774: 'list' object has no attribute 'read'
+2025-09-13 11:38:18,468 - WARNING - Error fetching sequence for P07996: 'list' object has no attribute 'read'
+2025-09-13 11:38:18,527 - WARNING - Error fetching sequence for P69905: 'list' object has no attribute 'read'
+2025-09-13 11:38:18,538 - WARNING - Error fetching sequence for P02760: 'list' object has no attribute 'read'
+2025-09-13 11:38:19,402 - WARNING - Error fetching sequence for P69905: 'list' object has no attribute 'read'
+2025-09-13 11:38:19,423 - WARNING - Error fetching sequence for P04406: 'list' object has no attribute 'read'
+2025-09-13 11:38:19,460 - WARNING - Error fetching sequence for P00738: 'list' object has no attribute 'read'
+2025-09-13 11:38:19,467 - WARNING - Error fetching sequence for P02790: 'list' object has no attribute 'read'
+2025-09-13 11:38:20,443 - WARNING - Error fetching sequence for P07225: 'list' object has no attribute 'read'
+2025-09-13 11:38:20,460 - WARNING - Error fetching sequence for P00739: 'list' object has no attribute 'read'
+2025-09-13 11:38:20,494 - WARNING - Error fetching sequence for P05155: 'list' object has no attribute 'read'
+2025-09-13 11:38:20,578 - WARNING - Error fetching sequence for P02751: 'list' object has no attribute 'read'
+2025-09-13 11:38:21,517 - WARNING - Error fetching sequence for P05546: 'list' object has no attribute 'read'
+2025-09-13 11:38:21,518 - WARNING - Error fetching sequence for P60709: 'list' object has no attribute 'read'
+2025-09-13 11:38:21,519 - WARNING - Error fetching sequence for P01019: 'list' object has no attribute 'read'
+2025-09-13 11:38:21,525 - WARNING - Error fetching sequence for P05154: 'list' object has no attribute 'read'
+2025-09-13 11:38:22,418 - WARNING - Error fetching sequence for P35542: 'list' object has no attribute 'read'
+2025-09-13 11:38:22,447 - WARNING - Error fetching sequence for P27169: 'list' object has no attribute 'read'
+2025-09-13 11:38:22,463 - WARNING - Error fetching sequence for Q14520: 'list' object has no attribute 'read'
+2025-09-13 11:38:22,521 - WARNING - Error fetching sequence for P03952: 'list' object has no attribute 'read'
+2025-09-13 11:38:23,417 - WARNING - Error fetching sequence for P02743: 'list' object has no attribute 'read'
+2025-09-13 11:38:23,424 - WARNING - Error fetching sequence for P02776: 'list' object has no attribute 'read'
+2025-09-13 11:38:23,443 - WARNING - Error fetching sequence for O43866: 'list' object has no attribute 'read'
+2025-09-13 11:38:23,496 - WARNING - Error fetching sequence for P49908: 'list' object has no attribute 'read'
+2025-09-13 11:38:24,441 - WARNING - Error fetching sequence for P04070: 'list' object has no attribute 'read'
+2025-09-13 11:38:24,484 - WARNING - Error fetching sequence for P0DJI8: 'list' object has no attribute 'read'
+2025-09-13 11:38:24,491 - WARNING - Error fetching sequence for Q9UK55: 'list' object has no attribute 'read'
+2025-09-13 11:38:24,551 - WARNING - Error fetching sequence for Q92954: 'list' object has no attribute 'read'
+2025-09-13 11:38:25,428 - WARNING - Error fetching sequence for P18428: 'list' object has no attribute 'read'
+2025-09-13 11:38:25,467 - WARNING - Error fetching sequence for Q13103: 'list' object has no attribute 'read'
+2025-09-13 11:38:25,478 - WARNING - Error fetching sequence for P05452: 'list' object has no attribute 'read'
+2025-09-13 11:38:25,598 - WARNING - Error fetching sequence for P27918: 'list' object has no attribute 'read'
+2025-09-13 11:38:26,462 - WARNING - Error fetching sequence for P20851: 'list' object has no attribute 'read'
+2025-09-13 11:38:26,498 - WARNING - Error fetching sequence for Q96IY4: 'list' object has no attribute 'read'
+2025-09-13 11:38:26,660 - WARNING - Error fetching sequence for P15169: 'list' object has no attribute 'read'
+2025-09-13 11:38:26,669 - WARNING - Error fetching sequence for P02775: 'list' object has no attribute 'read'
+2025-09-13 11:38:27,475 - WARNING - Error fetching sequence for P07737: 'list' object has no attribute 'read'
+2025-09-13 11:38:27,477 - WARNING - Error fetching sequence for P49747: 'list' object has no attribute 'read'
+2025-09-13 11:38:27,488 - WARNING - Error fetching sequence for P02741: 'list' object has no attribute 'read'
+2025-09-13 11:38:27,672 - WARNING - Error fetching sequence for P35579: 'list' object has no attribute 'read'
+2025-09-13 11:38:28,451 - WARNING - Error fetching sequence for P36955: 'list' object has no attribute 'read'
+2025-09-13 11:38:28,457 - WARNING - Error fetching sequence for Q04756: 'list' object has no attribute 'read'
+2025-09-13 11:38:28,632 - WARNING - Error fetching sequence for P19652: 'list' object has no attribute 'read'
+2025-09-13 11:38:28,749 - WARNING - Error fetching sequence for P22891: 'list' object has no attribute 'read'
+2025-09-13 11:38:29,434 - WARNING - Error fetching sequence for P08514: 'list' object has no attribute 'read'
+2025-09-13 11:38:29,471 - WARNING - Error fetching sequence for P35858: 'list' object has no attribute 'read'
+2025-09-13 11:38:29,531 - WARNING - Error fetching sequence for P23528: 'list' object has no attribute 'read'
+2025-09-13 11:38:29,602 - WARNING - Error fetching sequence for P06733: 'list' object has no attribute 'read'
+2025-09-13 11:38:30,416 - WARNING - Error fetching sequence for Q5TB80: 'list' object has no attribute 'read'
+2025-09-13 11:38:30,462 - WARNING - Error fetching sequence for P18065: 'list' object has no attribute 'read'
+2025-09-13 11:38:30,573 - WARNING - Error fetching sequence for P63104: 'list' object has no attribute 'read'
+2025-09-13 11:38:30,691 - WARNING - Error fetching sequence for Q86UX7: 'list' object has no attribute 'read'
+2025-09-13 11:38:31,574 - WARNING - Error fetching sequence for P17936: 'list' object has no attribute 'read'
+2025-09-13 11:38:31,575 - WARNING - Error fetching sequence for P10720: 'list' object has no attribute 'read'
+2025-09-13 11:38:31,577 - WARNING - Error fetching sequence for P62937: 'list' object has no attribute 'read'
+2025-09-13 11:38:31,605 - WARNING - Error fetching sequence for P02753: 'list' object has no attribute 'read'
+2025-09-13 11:38:32,473 - WARNING - Error fetching sequence for P48740: 'list' object has no attribute 'read'
+2025-09-13 11:38:32,504 - WARNING - Error fetching sequence for P22352: 'list' object has no attribute 'read'
+2025-09-13 11:38:32,548 - WARNING - Error fetching sequence for Q9Y490: 'list' object has no attribute 'read'
+2025-09-13 11:38:32,624 - WARNING - Error fetching sequence for P35443: 'list' object has no attribute 'read'
+2025-09-13 11:38:33,412 - WARNING - Error fetching sequence for P25311: 'list' object has no attribute 'read'
+2025-09-13 11:38:33,482 - WARNING - Error fetching sequence for P06702: 'list' object has no attribute 'read'
+2025-09-13 11:38:33,522 - WARNING - Error fetching sequence for P05106: 'list' object has no attribute 'read'
+2025-09-13 11:38:33,587 - WARNING - Error fetching sequence for P43652: 'list' object has no attribute 'read'
+2025-09-13 11:38:34,428 - WARNING - Error fetching sequence for Q96PD5: 'list' object has no attribute 'read'
+2025-09-13 11:38:34,432 - WARNING - Error fetching sequence for P02788: 'list' object has no attribute 'read'
+2025-09-13 11:38:34,558 - WARNING - Error fetching sequence for P18206: 'list' object has no attribute 'read'
+2025-09-13 11:38:34,743 - WARNING - Error fetching sequence for Q9UGM5: 'list' object has no attribute 'read'
+2025-09-13 11:38:35,417 - WARNING - Error fetching sequence for P68366: 'list' object has no attribute 'read'
+2025-09-13 11:38:35,505 - WARNING - Error fetching sequence for O00391: 'list' object has no attribute 'read'
+2025-09-13 11:38:35,656 - WARNING - Error fetching sequence for P11142: 'list' object has no attribute 'read'
+2025-09-13 11:38:35,753 - WARNING - Error fetching sequence for Q13201: 'list' object has no attribute 'read'
+2025-09-13 11:38:36,515 - WARNING - Error fetching sequence for P61224: 'list' object has no attribute 'read'
+2025-09-13 11:38:36,520 - WARNING - Error fetching sequence for P14618: 'list' object has no attribute 'read'
+2025-09-13 11:38:36,662 - WARNING - Error fetching sequence for P67936: 'list' object has no attribute 'read'
+2025-09-13 11:38:36,707 - WARNING - Error fetching sequence for P23142: 'list' object has no attribute 'read'
+2025-09-13 11:38:37,528 - WARNING - Error fetching sequence for P12814: 'list' object has no attribute 'read'
+2025-09-13 11:38:37,528 - WARNING - Error fetching sequence for P11226: 'list' object has no attribute 'read'
+2025-09-13 11:38:37,590 - WARNING - Error fetching sequence for P39039: 'list' object has no attribute 'read'
+2025-09-13 11:38:37,685 - WARNING - Error fetching sequence for P01034: 'list' object has no attribute 'read'
+2025-09-13 11:38:38,551 - WARNING - Error fetching sequence for P81605: 'list' object has no attribute 'read'
+2025-09-13 11:38:38,580 - INFO - Fetched sequences for 0/179 proteins
+2025-09-13 11:38:38,581 - INFO - Generating sequence embeddings...
+2025-09-13 11:40:05,585 - INFO - Creating protein index...
+2025-09-13 11:40:06,012 - INFO - Created index with 179 proteins and 22 metadata columns
+2025-09-13 11:40:08,717 - INFO - Fetching protein sequences...
+2025-09-13 11:40:53,506 - INFO - Fetched sequences for 179/179 proteins
+2025-09-13 11:40:57,125 - INFO - Generating sequence embeddings...
+2025-09-13 11:43:36,556 - INFO - Generating structure embeddings...
+2025-09-13 11:44:06,152 - INFO - Downloaded 175/179 PDB files
+2025-09-13 11:44:06,153 - INFO - Running get_LE.py for LE100...
+2025-09-13 11:44:07,893 - ERROR - get_LE.py failed for LE100: Command '['python', 'get_LE.py', 'pdbs', 'out/le100', '100']' returned non-zero exit status 1.
+2025-09-13 11:44:07,893 - ERROR - stdout: 
+2025-09-13 11:44:07,893 - ERROR - stderr: Traceback (most recent call last):
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 8, in <module>
+    from pe.model import modules, preprocess
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/pe/model/preprocess.py", line 11, in <module>
+    from einops import rearrange  # For tensor reshaping operations
+ModuleNotFoundError: No module named 'einops'
+
+2025-09-13 11:46:11,803 - INFO - Generating structure embeddings...
+2025-09-13 11:46:12,346 - INFO - Downloaded 175/179 PDB files
+2025-09-13 11:46:12,347 - INFO - Running get_LE.py for LE100...
+2025-09-13 11:46:13,372 - ERROR - get_LE.py failed for LE100: Command '['python', 'get_LE.py', 'pdbs', 'out/le100', '100']' returned non-zero exit status 1.
+2025-09-13 11:46:13,372 - ERROR - stdout: 
+2025-09-13 11:46:13,372 - ERROR - stderr: 
+  0%|          | 0/174 [00:00<?, ?it/s]
+  0%|          | 0/174 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 105, in <module>
+    dim100 = get_local_environment(pdb_file=pdb_path+i)["logits"]
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 28, in get_local_environment
+    structure = protein_parser.get_structure('none', pdb_file)
+  File "/Users/leeyoma/anaconda3/envs/pcembed/lib/python3.10/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/Users/leeyoma/anaconda3/envs/pcembed/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/leeyoma/anaconda3/envs/pcembed/lib/python3.10/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+FileNotFoundError: [Errno 2] No such file or directory: 'pdbsP08603.pdb'
+
+2025-09-13 11:46:31,289 - INFO - Generating structure embeddings...
+2025-09-13 11:46:31,837 - INFO - Downloaded 175/179 PDB files
+2025-09-13 11:46:31,837 - INFO - Running get_LE.py for LE100...
+2025-09-13 11:46:32,681 - ERROR - get_LE.py failed for LE100: Command '['python', 'get_LE.py', 'pdbs', 'out/le100', '100']' returned non-zero exit status 1.
+2025-09-13 11:46:32,681 - ERROR - stdout: 
+2025-09-13 11:46:32,681 - ERROR - stderr: 
+  0%|          | 0/174 [00:00<?, ?it/s]
+  0%|          | 0/174 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 105, in <module>
+    dim100 = get_local_environment(pdb_file=os.path.join(pdb_path, i))["logits"]
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 45, in get_local_environment
+    io.save(main_chain_dir, convert.CustomSelect(only_main=True))
+  File "/Users/leeyoma/anaconda3/envs/pcembed/lib/python3.10/site-packages/Bio/PDB/PDBIO.py", line 341, in save
+    fhandle = open(file, "w")
+FileNotFoundError: [Errno 2] No such file or directory: 'Temp/temp_P08603.pdb'
+
+2025-09-13 14:18:04,851 - INFO - Generating structure embeddings...
+2025-09-13 14:18:19,461 - WARNING - Error downloading PDB for P49908: HTTPSConnectionPool(host='alphafold.ebi.ac.uk', port=443): Max retries exceeded with url: /files/AF-P49908-F1-model_v4.pdb (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+2025-09-13 14:18:19,461 - WARNING - Error downloading PDB for P22352: HTTPSConnectionPool(host='alphafold.ebi.ac.uk', port=443): Max retries exceeded with url: /files/AF-P22352-F1-model_v4.pdb (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+2025-09-13 14:18:19,462 - WARNING - Error downloading PDB for P04114: HTTPSConnectionPool(host='alphafold.ebi.ac.uk', port=443): Max retries exceeded with url: /files/AF-P04114-F1-model_v4.pdb (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+2025-09-13 14:18:19,503 - WARNING - Error downloading PDB for P08519: HTTPSConnectionPool(host='alphafold.ebi.ac.uk', port=443): Max retries exceeded with url: /files/AF-P08519-F1-model_v4.pdb (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+2025-09-13 14:18:19,504 - INFO - Downloaded 175/179 PDB files
+2025-09-13 14:18:19,504 - INFO - Running get_LE.py for LE100...
+2025-09-13 14:18:21,533 - ERROR - get_LE.py failed for LE100: Command '['python', 'get_LE.py', 'pdbs', 'out/le100', '100']' returned non-zero exit status 1.
+2025-09-13 14:18:21,533 - ERROR - stdout: 
+2025-09-13 14:18:21,533 - ERROR - stderr: 
+  0%|          | 0/174 [00:00<?, ?it/s]
+  0%|          | 0/174 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 105, in <module>
+    dim100 = get_local_environment(pdb_file=os.path.join(pdb_path, i))["logits"]
+  File "/Users/leeyoma/code/protein/ProDESIGN-LE/get_LE.py", line 79, in get_local_environment
+    log, feat = body(processed, mask=aa['mask'])
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2025-09-13 14:20:35,277 - INFO - Merging embeddings...
+2025-09-13 14:20:35,463 - ERROR - Pipeline failed: Object of type Float64DType is not JSON serializable
+2025-09-13 14:20:49,627 - INFO - Merged embeddings already exist, skipping...
+2025-09-13 14:20:52,841 - INFO - Building long task table...
+2025-09-13 14:20:58,054 - INFO - Created long task table with 137802 rows
+2025-09-13 14:21:18,304 - INFO - Running quick evaluation...
+2025-09-13 14:21:19,065 - INFO - Created evaluation summary with 4 feature sets

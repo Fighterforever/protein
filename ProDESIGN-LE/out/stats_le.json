@@ -1,0 +1,12 @@
+{
+  "total_proteins": 179,
+  "le100_proteins": 179,
+  "le21_proteins": 179,
+  "downloaded_pdbs": 175,
+  "missing_pdbs": [
+    "P08519",
+    "P04114",
+    "P49908",
+    "P22352"
+  ]
+}

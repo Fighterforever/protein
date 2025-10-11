@@ -1,0 +1,12 @@
+{
+  "total_proteins": 179,
+  "embedded_proteins": 179,
+  "embedding_dim": 1280,
+  "model": "esm2_t33_650M_UR50D",
+  "sequence_length_stats": {
+    "mean": 552.0335195530727,
+    "median": 444.0,
+    "min": 83,
+    "max": 4563
+  }
+}
