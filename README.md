@@ -1,11 +1,11 @@
 ## Protein Corona Embedding & Prediction
 
 本项目提供一条可复现实验数据到蛋白表示与下游分析的完整流水线：
-- 基于 ESM2 的蛋白序列嵌入
-- 基于 ProDESIGN-LE 的蛋白结构局部环境嵌入（LE100/LE21）
-- 自动抓取 UniProt 序列与 AlphaFold PDB
-- 多源特征合并、长表构建与快速评估
-- 从既有产物直接“生成统计”而无需重算（gen-stats）
+ 基于 ESM2 的蛋白序列嵌入
+ 基于 ProDESIGN-LE 的蛋白结构局部环境嵌入（LE100/LE21）
+ 自动抓取 UniProt 序列与 AlphaFold PDB
+ 多源特征合并、长表构建与快速评估
+ 从既有产物直接“生成统计”而无需重算（gen-stats）
 
 目录中 `ProDESIGN-LE/` 既包含原始 ProDESIGN-LE 能力（序列设计/evaluator/预处理）也包含本项目适配后的嵌入流水线脚本。
 
@@ -29,7 +29,7 @@
 - 可选 GPU（CUDA）
 - 结构嵌入需 `best.pkl`（ProDESIGN-LE 预训练权重）
 
-安装依赖（推荐使用虚拟环境）：
+安装依赖：
 
 ```bash
 python -m venv .venv
@@ -41,7 +41,7 @@ python -m pip install -r ProDESIGN-LE/requirements_extra.txt
 `requirements_extra.txt` 已包含：torch、fair-esm、biopython、pandas、numpy、pyarrow、tqdm、scikit-learn、openpyxl、requests、einops。
 
 
-### 快速开始
+### 开始
 若你已在仓库根目录：
 
 ```bash
@@ -84,7 +84,7 @@ python ProDESIGN-LE/pc_embed_pipeline.py gen-stats \
   --out_dir ProDESIGN-LE/out
 ```
 
-一键执行（可选跳过结构嵌入）：
+执行（可选跳过结构嵌入）：
 
 ```bash
 # 全流程
