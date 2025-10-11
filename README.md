@@ -120,32 +120,9 @@ python ProDESIGN-LE/pc_embed_pipeline.py all \
 说明：上述 4 个 UniProt 号在 AlphaFold 页面/文件接口均 404，不提供模型，无法下载与计算 LE。
 
 
-### 常见问题（FAQ）
-- 找不到 `best.pkl`
-  - 仅影响结构嵌入。可先加 `--skip-str-embed` 跑通其它步骤与 gen-stats。
-- `einops` 或 `torch` 报错
-  - 已在 `requirements_extra.txt` 中列出，确保虚拟环境激活后安装。
-- CUDA OOM
-  - 序列嵌入自动降批次；长序列采用滑窗计算 CLS 表示。
-- AlphaFold PDB 下载失败
-  - 网络/速率限制或该条目无公开模型；最终缺失项会记录到 `stats_le.json` 与合并表 `le_missing`。
-- 临时 PDB 主链文件
-  - `get_LE.py` 会在 `Temp/` 下写入主链 PDB（若目录不存在请手动创建）。
-
-
-### 再现性建议
-- 固定 Python/依赖版本并使用虚拟环境。
-- 大规模计算建议分步执行并缓存中间产物（index、fetch-seq、seq-embed、str-embed）。
-
 
 ### 引用
 - ESM2: Rao et al., Facebook AI Research（fair-esm）
 - ProDESIGN-LE: Accurate and efficient protein sequence design through learning concise local environment of residues（Bioinformatics, 2023）
 - 蛋白注释：The Human Protein Atlas
 - 结构来源：AlphaFold Protein Structure Database
-
-
-### 许可证
-若未声明，默认以本仓库随附的 LICENSE 为准；如未包含 LICENSE，请在对外发布前补充适用的开源协议。
-
-
