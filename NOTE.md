@@ -1,7 +1,3 @@
-# Protein Corona:
-
-蛋白冠是指纳米粒子进入生物体液（如血液、细胞外基质等）后，其表面吸附了一层生物分子（主要是蛋白质）的现象。具体来说，当纳米粒子与生物体液接触时，液体中的蛋白质会迅速在纳米粒子表面吸附，形成一层覆盖层。
-
 # 输入输出
 
 **Input:** 纳米粒的定性&定量特征
@@ -23,16 +19,6 @@ THE HUMAN PROTEIN ATLAS (https://www.proteinatlas.org/) 获取到蛋白标注数
 假设：血浆高丰度蛋白更容易和纳米粒结合
 
 实验：可视化上述蛋白丰度和培养浓度的关系
-
-
-
-
-
-
-
-
-
-
 
 # 数据中所有蛋白
 
@@ -215,4 +201,5 @@ THE HUMAN PROTEIN ATLAS (https://www.proteinatlas.org/) 获取到蛋白标注数
 177. P11226 Mannose-binding protein C甘露糖结合蛋白C	
 178. P39039 · MBL1_MOUSEMannose-binding protein A甘露糖结合蛋白A	
 179. α-1-antiproteinase 抗蛋白酶	
+
 180. Titin 肌联蛋白
