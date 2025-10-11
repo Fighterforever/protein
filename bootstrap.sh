@@ -1,27 +1,17 @@
-#!/bin/bash
-
 set -e
-
 echo "=== Protein Embedding Pipeline Bootstrap ==="
-
-# Check prerequisites
 echo "Checking prerequisites..."
 if ! command -v git &> /dev/null; then
     echo "ERROR: git is not installed. Please install git first."
     exit 1
 fi
-
 if ! command -v python &> /dev/null; then
     echo "ERROR: python is not installed. Please install Python first."
     exit 1
 fi
-
 echo "✓ git and python are available"
-
-# Clone repository if not exists
 REPO_NAME="ProDESIGN-LE"
 REPO_URL="https://github.com/bigict/ProDESIGN-LE.git"
-
 if [ ! -d "$REPO_NAME" ]; then
     echo "Cloning $REPO_NAME repository..."
     git clone "$REPO_URL"
@@ -29,10 +19,7 @@ if [ ! -d "$REPO_NAME" ]; then
 else
     echo "✓ Repository already exists, skipping clone"
 fi
-
 cd "$REPO_NAME"
-
-# Create virtual environment
 echo "Setting up Python environment..."
 if command -v conda &> /dev/null; then
     echo "Using conda for environment..."
@@ -45,41 +32,27 @@ else
     source .venv/bin/activate
     echo "✓ Virtual environment created and activated"
 fi
-
-# Install dependencies
 echo "Installing dependencies..."
-
-# Install requirements.txt if exists
 if [ -f "requirements.txt" ]; then
     echo "Installing repository requirements..."
     pip install -r requirements.txt
 fi
-
-# Install additional dependencies
 echo "Installing additional dependencies..."
 pip install torch fair-esm biopython pandas numpy pyarrow tqdm scikit-learn openpyxl requests
-
 echo "✓ All dependencies installed"
-
-# Copy data files from parent directory
 echo "Copying data files..."
 if [ -f "../imputed.xlsx" ]; then
     cp "../imputed.xlsx" .
     echo "✓ Copied imputed.xlsx"
 fi
-
 if [ -f "../imputed_prot_ann.csv" ]; then
     cp "../imputed_prot_ann.csv" .
     echo "✓ Copied imputed_prot_ann.csv"
 fi
-
-# Copy get_LE.py from parent directory (overwrite)
 if [ -f "../get_LE.py" ]; then
     cp "../get_LE.py" .
     echo "✓ Copied get_LE.py"
 fi
-
-# Check for best.pkl
 if [ ! -f "best.pkl" ]; then
     echo ""
     echo "⚠️  WARNING: best.pkl is missing in the repository root!"
@@ -94,8 +67,6 @@ if [ ! -f "best.pkl" ]; then
     echo "  python pc_embed_pipeline.py all --skip-str-embed --imputed imputed.xlsx --ann imputed_prot_ann.csv --out_dir out"
     echo ""
 fi
-
-# Create pipeline script
 echo "Creating pipeline script..."
 cat > pc_embed_pipeline.py << 'EOF'
 import argparse
@@ -119,8 +90,6 @@ from tqdm import tqdm
 from sklearn.preprocessing import StandardScaler
 import pyarrow as pa
 import pyarrow.parquet as pq
-
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -130,24 +99,20 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
 class ProteinEmbeddingPipeline:
     def __init__(self, out_dir: str = "out"):
         self.out_dir = Path(out_dir)
         self.out_dir.mkdir(exist_ok=True)
         
-        # Suppress warnings
         warnings.filterwarnings('ignore')
         
     def _extract_uniprot_ac(self, protein_name: str) -> Optional[str]:
         """Extract UniProt accession code from protein name"""
-        # Try exact match first
         uniprot_pattern = r'^[A-NR-Z][0-9][A-Z0-9]{3}[0-9]$|^[OPQ][0-9][A-Z0-9]{3}[0-9]$'
         match = re.match(uniprot_pattern, protein_name)
         if match:
             return match.group()
         
-        # Try extracting from protein name (before space)
         parts = protein_name.split()
         if parts:
             candidate = parts[0]
@@ -168,10 +133,8 @@ class ProteinEmbeddingPipeline:
         
         logger.info("Creating protein index...")
         
-        # Read imputed data
         df_imputed = pd.read_excel(imputed_path)
         
-        # Extract protein columns
         protein_columns = []
         meta_columns = []
         
@@ -185,14 +148,11 @@ class ProteinEmbeddingPipeline:
             else:
                 meta_columns.append(col)
         
-        # Create protein index dataframe
         df_proteins = pd.DataFrame(protein_columns)
         
-        # Read annotation data and merge
         df_ann = pd.read_csv(ann_path)
         df_merged = pd.merge(df_proteins, df_ann, on='protein_id', how='left')
         
-        # Save results
         df_merged.to_csv(output_csv, index=False)
         
         with open(meta_json, 'w') as f:
@@ -209,7 +169,6 @@ class ProteinEmbeddingPipeline:
         fasta_path = self.out_dir / "sequences.fasta"
         
         if output_csv.exists() and fasta_path.exists():
-            # Check if sequences are already populated
             df = pd.read_csv(output_csv)
             if 'sequence' in df.columns and df['sequence'].notna().all():
                 logger.info("Sequences already fetched, skipping...")
@@ -219,7 +178,6 @@ class ProteinEmbeddingPipeline:
         
         df = pd.read_csv(index_path)
         
-        # Try to load from FASTA directory first
         sequences = {}
         if fasta_dir and os.path.exists(fasta_dir):
             fasta_files = list(Path(fasta_dir).glob("*.fasta")) + list(Path(fasta_dir).glob("*.fa"))
@@ -230,7 +188,6 @@ class ProteinEmbeddingPipeline:
                         if ac:
                             sequences[ac] = str(record.seq)
         
-        # Fetch missing sequences from UniProt
         missing_proteins = [ac for ac in df['protein_id'] if ac not in sequences]
         
         def fetch_sequence(ac):
@@ -255,10 +212,8 @@ class ProteinEmbeddingPipeline:
                     if seq:
                         sequences[ac] = seq
         
-        # Update dataframe
         df['sequence'] = df['protein_id'].map(sequences)
         
-        # Save updated dataframe and FASTA
         df.to_csv(output_csv, index=False)
         
         records = []
@@ -291,7 +246,6 @@ class ProteinEmbeddingPipeline:
         
         logger.info("Generating sequence embeddings...")
         
-        # Load ESM2 model
         model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
         batch_converter = alphabet.get_batch_converter()
         model.eval()
@@ -299,14 +253,11 @@ class ProteinEmbeddingPipeline:
         if torch.cuda.is_available():
             model = model.cuda()
         
-        # Load protein data
         df = pd.read_csv(index_path)
         df = df[df['sequence'].notna()].copy()
         
-        # Prepare data
         data = [(row['protein_id'], row['sequence']) for _, row in df.iterrows()]
         
-        # Generate embeddings
         embeddings = {}
         batch_size = 32
         
@@ -324,10 +275,8 @@ class ProteinEmbeddingPipeline:
                 
                 batch_embeddings = []
                 for i, (protein_id, sequence) in enumerate(batch_data):
-                    # Get CLS token representation
                     cls_repr = token_representations[i, 0, :].cpu().numpy()
                     
-                    # For long sequences, use sliding window
                     if len(sequence) > 1022:
                         window_size = 1022
                         overlap = 128
@@ -358,7 +307,6 @@ class ProteinEmbeddingPipeline:
                 else:
                     raise
         
-        # Process with adaptive batch size
         total_processed = 0
         with tqdm(total=len(data), desc="Processing sequences") as pbar:
             for start_idx in range(0, len(data), batch_size):
@@ -369,11 +317,9 @@ class ProteinEmbeddingPipeline:
                 while batch_embeddings is None:
                     batch_embeddings = process_batch(batch)
                     if batch_embeddings is None:
-                        # Reduce batch size and retry
                         batch_size = max(1, batch_size // 2)
                         logger.warning(f"CUDA OOM detected, reducing batch size to {batch_size}")
                         if batch_size == 1:
-                            # Process one by one if still failing
                             single_batch = [batch[0]]
                             batch_embeddings = process_batch(single_batch)
                             if batch_embeddings is not None:
@@ -385,18 +331,14 @@ class ProteinEmbeddingPipeline:
                 total_processed += len(batch_embeddings)
                 pbar.update(len(batch_embeddings))
         
-        # Save embeddings
         embedding_array = np.array([embeddings[pid] for pid in df['protein_id']])
         
-        # Save as CSV
         df_emb = pd.DataFrame(embedding_array, columns=[f"esm2_{i}" for i in range(embedding_array.shape[1])])
         df_emb['protein_id'] = df['protein_id'].values
         df_emb.to_csv(output_csv, index=False)
         
-        # Save as NPZ
         np.savez(output_npz, embeddings=embedding_array, protein_ids=df['protein_id'].values)
         
-        # Save stats
         stats = {
             "total_proteins": len(df),
             "embedded_proteins": len(embeddings),
@@ -424,13 +366,11 @@ class ProteinEmbeddingPipeline:
         output_le21 = self.out_dir / "emb_struc_le21.csv"
         stats_path = self.out_dir / "stats_le.json"
         
-        # Check if get_LE.py exists
         if not os.path.exists("get_LE.py"):
             logger.error("get_LE.py not found in current directory")
             logger.info("Skipping structure embedding step")
             return None, None
         
-        # Check if best.pkl exists
         if not os.path.exists("best.pkl"):
             logger.warning("best.pkl not found in current directory")
             logger.info("Structure embedding requires best.pkl weights")
@@ -443,15 +383,12 @@ class ProteinEmbeddingPipeline:
         
         logger.info("Generating structure embeddings...")
         
-        # Load protein data
         df = pd.read_csv(index_path)
         df = df[df['sequence'].notna()].copy()
         
-        # Create PDB directory if it doesn't exist
         pdb_path = Path(pdb_dir)
         pdb_path.mkdir(exist_ok=True)
         
-        # Download missing PDBs
         missing_pdbs = []
         downloaded_count = 0
         
@@ -483,7 +420,6 @@ class ProteinEmbeddingPipeline:
         
         logger.info(f"Downloaded {downloaded_count}/{len(df)} PDB files")
         
-        # Run get_LE.py for different dimensions
         le100_dir = self.out_dir / "le100"
         le21_dir = self.out_dir / "le21"
         
@@ -505,7 +441,6 @@ class ProteinEmbeddingPipeline:
                 logger.error(f"stderr: {e.stderr}")
                 return None, None
         
-        # Parse embedding files and create dataframes
         le100_embeddings = {}
         le21_embeddings = {}
         
@@ -527,7 +462,6 @@ class ProteinEmbeddingPipeline:
                 except Exception as e:
                     logger.warning(f"Error reading LE21 embedding for {ac}: {e}")
         
-        # Create dataframes
         if le100_embeddings:
             le100_array = np.array([le100_embeddings.get(pid, np.zeros(100)) for pid in df['protein_id']])
             df_le100 = pd.DataFrame(le100_array, columns=[f"le100_{i}" for i in range(100)])
@@ -540,7 +474,6 @@ class ProteinEmbeddingPipeline:
             df_le21['protein_id'] = df['protein_id'].values
             df_le21.to_csv(output_le21, index=False)
         
-        # Save stats
         stats = {
             "total_proteins": len(df),
             "le100_proteins": len(le100_embeddings),
@@ -570,10 +503,8 @@ class ProteinEmbeddingPipeline:
         
         logger.info("Merging embeddings...")
         
-        # Load sequence embeddings
         df_seq = pd.read_csv(seq_path)
         
-        # Load structure embeddings if available
         df_le100 = None
         df_le21 = None
         le_missing = False
@@ -585,10 +516,8 @@ class ProteinEmbeddingPipeline:
             le_missing = True
             logger.warning("Structure embeddings not found, proceeding without them")
         
-        # Load annotation data
         df_ann = pd.read_csv(ann_path)
         
-        # Merge all data
         df_merged = df_seq.copy()
         
         if df_le100 is not None:
@@ -599,28 +528,23 @@ class ProteinEmbeddingPipeline:
         
         df_merged = pd.merge(df_merged, df_ann, on='protein_id', how='left')
         
-        # Z-score normalization for embedding columns
         embedding_cols = [col for col in df_merged.columns if col.startswith(('esm2_', 'le100_', 'le21_'))]
         
         scaler = StandardScaler()
         df_merged[embedding_cols] = scaler.fit_transform(df_merged[embedding_cols])
         
-        # Log-transform and z-score blood_conc
         if 'blood_conc' in df_merged.columns:
             df_merged['blood_conc'] = np.log1p(df_merged['blood_conc'])
             df_merged['blood_conc'] = scaler.fit_transform(df_merged[['blood_conc']])
         
-        # Add le_missing flag
         if le_missing:
             df_merged['le_missing'] = True
         else:
             df_merged['le_missing'] = False
         
-        # Save as parquet
         table = pa.Table.from_pandas(df_merged)
         pq.write_table(table, output_parquet)
         
-        # Save schema
         schema = {
             "total_rows": len(df_merged),
             "total_columns": len(df_merged.columns),
@@ -647,10 +571,8 @@ class ProteinEmbeddingPipeline:
         
         logger.info("Building long task table...")
         
-        # Load imputed data
         df_imputed = pd.read_excel(imputed_path)
         
-        # Extract protein columns and metadata
         protein_columns = []
         meta_columns = []
         
@@ -661,7 +583,6 @@ class ProteinEmbeddingPipeline:
             else:
                 meta_columns.append(col)
         
-        # Melt protein data
         df_long = df_imputed.melt(
             id_vars=meta_columns,
             value_vars=protein_columns,
@@ -669,16 +590,12 @@ class ProteinEmbeddingPipeline:
             value_name='abundance'
         )
         
-        # Extract protein_id
         df_long['protein_id'] = df_long['protein_name'].apply(self._extract_uniprot_ac)
         
-        # Load merged embeddings
         df_embeddings = pd.read_parquet(merged_path)
         
-        # Merge with embeddings
         df_final = pd.merge(df_long, df_embeddings, on='protein_id', how='left')
         
-        # Save as parquet
         table = pa.Table.from_pandas(df_final)
         pq.write_table(table, output_path)
         
@@ -697,10 +614,8 @@ class ProteinEmbeddingPipeline:
         
         logger.info("Running quick evaluation...")
         
-        # Load long table
         df = pd.read_parquet(long_path)
         
-        # Define feature sets
         feature_sets = {
             'Baseline': ['blood_conc'] + [col for col in df.columns if col.startswith(('le100_', 'le21_'))],
             'ESM2': [col for col in df.columns if col.startswith('esm2_')],
@@ -708,18 +623,13 @@ class ProteinEmbeddingPipeline:
             'ALL': [col for col in df.columns if col.startswith(('esm2_', 'le100_', 'le21_'))]
         }
         
-        # This is a placeholder for actual evaluation
-        # In a real implementation, you would perform cross-validation
-        # for each feature set and calculate AUROC scores
         
         results = []
         for set_name, features in feature_sets.items():
-            # Check if features exist
             available_features = [f for f in features if f in df.columns]
             if not available_features:
                 continue
             
-            # Placeholder evaluation
             results.append({
                 'feature_set': set_name,
                 'n_features': len(available_features),
@@ -733,50 +643,40 @@ class ProteinEmbeddingPipeline:
         logger.info(f"Created evaluation summary with {len(df_results)} feature sets")
         
         return output_path
-
 def main():
     parser = argparse.ArgumentParser(description="Protein Embedding Pipeline")
     subparsers = parser.add_subparsers(dest='command', help='Available commands')
     
-    # Common arguments
     def add_common_args(p):
         p.add_argument('--out_dir', type=str, default='out', help='Output directory')
     
-    # Index command
     index_parser = subparsers.add_parser('index', help='Create protein index')
     add_common_args(index_parser)
     index_parser.add_argument('--imputed', type=str, required=True, help='Path to imputed.xlsx')
     index_parser.add_argument('--ann', type=str, required=True, help='Path to annotation CSV')
     
-    # Fetch-seq command
     fetch_parser = subparsers.add_parser('fetch-seq', help='Fetch protein sequences')
     add_common_args(fetch_parser)
     fetch_parser.add_argument('--fasta_dir', type=str, help='Directory containing FASTA files')
     
-    # Seq-embed command
     seq_parser = subparsers.add_parser('seq-embed', help='Generate sequence embeddings')
     add_common_args(seq_parser)
     
-    # Str-embed command
     str_parser = subparsers.add_parser('str-embed', help='Generate structure embeddings')
     add_common_args(str_parser)
     str_parser.add_argument('--pdb_dir', type=str, default='pdbs', help='PDB directory')
     
-    # Merge command
     merge_parser = subparsers.add_parser('merge', help='Merge embeddings')
     add_common_args(merge_parser)
     merge_parser.add_argument('--ann', type=str, required=True, help='Path to annotation CSV')
     
-    # Build-long command
     long_parser = subparsers.add_parser('build-long', help='Build long task table')
     add_common_args(long_parser)
     long_parser.add_argument('--imputed', type=str, required=True, help='Path to imputed.xlsx')
     
-    # Quick-eval command
     eval_parser = subparsers.add_parser('quick-eval', help='Quick evaluation')
     add_common_args(eval_parser)
     
-    # All command
     all_parser = subparsers.add_parser('all', help='Run all steps')
     add_common_args(all_parser)
     all_parser.add_argument('--imputed', type=str, required=True, help='Path to imputed.xlsx')
@@ -809,19 +709,14 @@ def main():
         elif args.command == 'quick-eval':
             pipeline.quick_eval()
         elif args.command == 'all':
-            # Run all steps
             logger.info("Running complete pipeline...")
             
-            # Index
             pipeline.index(args.imputed, args.ann)
             
-            # Fetch sequences
             pipeline.fetch_sequences(args.fasta_dir)
             
-            # Sequence embeddings
             pipeline.sequence_embedding()
             
-            # Structure embeddings (optional)
             if not args.skip_str_embed:
                 try:
                     pipeline.structure_embedding(args.pdb_dir)
@@ -829,13 +724,10 @@ def main():
                     logger.warning(f"Structure embedding failed: {e}")
                     logger.info("Continuing without structure embeddings...")
             
-            # Merge embeddings
             pipeline.merge_embeddings(args.ann)
             
-            # Build long table
             pipeline.build_long_table(args.imputed)
             
-            # Quick eval (optional)
             try:
                 pipeline.quick_eval()
             except Exception as e:
@@ -843,12 +735,10 @@ def main():
             
             logger.info("Pipeline completed successfully!")
             
-            # Print summary
             print("\n" + "="*50)
             print("PIPELINE SUMMARY")
             print("="*50)
             
-            # Check output files
             out_path = Path(args.out_dir)
             files = [
                 ("Protein Index", "protein_index.csv"),
@@ -872,12 +762,9 @@ def main():
     except Exception as e:
         logger.error(f"Pipeline failed: {e}")
         raise
-
 if __name__ == "__main__":
     main()
 EOF
-
-# Create requirements_extra.txt
 echo "Creating requirements_extra.txt..."
 cat > requirements_extra.txt << 'EOF'
 torch
@@ -891,119 +778,61 @@ scikit-learn
 openpyxl
 requests
 EOF
-
-# Create README_embed.md
 echo "Creating README_embed.md..."
 cat > README_embed.md << 'EOF'
-# Protein Embedding Pipeline
-
 This pipeline generates protein embeddings for structure-function analysis using ESM2 (sequence) and ProDESIGN-LE (structure) models.
-
-## Prerequisites
-
 - `git` and Python 3.9+
 - CUDA (optional, for GPU acceleration)
 - `best.pkl` weights file (for structure embedding)
-
-## Quick Start
-
-### One-click bootstrap
-
 ```bash
 bash bootstrap.sh
 ```
-
-### Manual installation
-
 1. Clone repository:
 ```bash
 git clone https://github.com/bigict/ProDESIGN-LE.git
 cd ProDESIGN-LE
 ```
-
 2. Create environment:
 ```bash
-# Using conda (recommended)
 conda create -n pcembed python=3.10
 conda activate pcembed
-
-# Or using venv
 python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
 ```
-
 3. Install dependencies:
 ```bash
 pip install -r requirements.txt  # If exists
 pip install -r requirements_extra.txt
 ```
-
 4. Copy data files:
 ```bash
 cp ../imputed.xlsx .
 cp ../imputed_prot_ann.csv .
 cp ../get_LE.py .
 ```
-
 5. Obtain `best.pkl` and place in repository root.
-
-## Usage
-
-### Environment activation
-
 ```bash
-# Conda
 conda activate pcembed
-
-# Venv
 source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
-
-### Individual steps
-
 ```bash
-# 1) Create protein index
 python pc_embed_pipeline.py index --imputed imputed.xlsx --ann imputed_prot_ann.csv --out_dir out
-
-# 2) Fetch protein sequences
 python pc_embed_pipeline.py fetch-seq --out_dir out --fasta_dir fastas
-
-# 3) Generate sequence embeddings
 python pc_embed_pipeline.py seq-embed --out_dir out
-
-# 4) Generate structure embeddings (requires best.pkl)
 python pc_embed_pipeline.py str-embed --pdb_dir pdbs --out_dir out
-
-# 5) Merge all embeddings
 python pc_embed_pipeline.py merge --out_dir out --ann imputed_prot_ann.csv
-
-# 6) Build long-format task table
 python pc_embed_pipeline.py build-long --imputed imputed.xlsx --out_dir out
-
-# 7) Quick evaluation (optional)
 python pc_embed_pipeline.py quick-eval --out_dir out
 ```
-
-### One-click pipeline
-
 ```bash
-# Full pipeline with structure embedding
 python pc_embed_pipeline.py all --imputed imputed.xlsx --ann imputed_prot_ann.csv --pdb_dir pdbs --out_dir out
-
-# Skip structure embedding (if best.pkl is missing)
 python pc_embed_pipeline.py all --imputed imputed.xlsx --ann imputed_prot_ann.csv --skip-str-embed --out_dir out
 ```
-
-## Input Files
-
 - `imputed.xlsx`: Protein abundance data (wide format)
 - `imputed_prot_ann.csv`: Protein annotations
 - `get_LE.py`: Structure embedding script (provided with ProDESIGN-LE)
 - `best.pkl`: Pre-trained weights (required for structure embedding)
-
-## Output Files
-
 - `out/protein_index.csv`: Protein metadata index
 - `out/sequences.fasta`: Protein sequences in FASTA format
 - `out/emb_seq_esm2_t33.csv`: ESM2 sequence embeddings (1280D)
@@ -1011,39 +840,25 @@ python pc_embed_pipeline.py all --imputed imputed.xlsx --ann imputed_prot_ann.cs
 - `out/emb_struc_le21.csv`: LE21 structure embeddings (21D)
 - `out/protein_embed_merged.parquet`: Combined embeddings
 - `out/long_task_table.parquet`: Long-format task table
-
-## Important Notes
-
 1. **Protein IDs**: The pipeline uses UniProt accession codes as protein identifiers. These are extracted from column names in the input data.
-
 2. **Structure Embedding**: 
    - Requires `best.pkl` weights file
    - Downloads PDB structures from AlphaFold v4
    - Uses position arguments when calling `get_LE.py`
-
 3. **Memory Usage**:
    - Sequence embedding uses GPU if available
    - Adaptive batch size handles CUDA OOM errors
    - Long sequences (>1022 aa) use sliding window approach
-
 4. **Error Handling**:
    - Pipeline continues even if structure embedding fails
    - Missing PDBs are logged but don't stop execution
    - Failed UniProt requests are logged and skipped
-
-## Troubleshooting
-
 1. **Missing `best.pkl`**: The pipeline will skip structure embedding but continue with sequence embeddings. Obtain the weights file from the ProDESIGN-LE project.
-
 2. **CUDA OOM**: The pipeline automatically reduces batch size when GPU memory is insufficient.
-
 3. **Network Issues**: The pipeline retries failed downloads and logs errors for manual inspection.
-
 4. **Large Datasets**: For very large datasets, consider running individual steps separately and monitoring memory usage.
 EOF
-
 echo "✓ All files created successfully"
-
 echo ""
 echo "=== Next Steps ==="
 echo "1. Activate your environment:"
@@ -1057,7 +872,5 @@ echo "   python pc_embed_pipeline.py all --imputed imputed.xlsx --ann imputed_pr
 echo ""
 echo "For detailed usage instructions, see README_embed.md"
 EOF
-
 chmod +x bootstrap.sh
-
 echo "Bootstrap script created successfully!"
