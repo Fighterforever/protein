@@ -1,0 +1,11 @@
+{
+  "mode":"abundance",
+  "proteins":178,
+  "rows_matrix":178,
+  "rows_long":31684,
+  "long_path":"ProDESIGN-LE\/out\/pairwise_abundance_similarity_long.csv",
+  "matrix_path":"ProDESIGN-LE\/out\/pairwise_abundance_similarity.csv",
+  "parquet_enabled":false,
+  "similarity_mean":0.0497109853,
+  "similarity_std":0.1468854994
+}

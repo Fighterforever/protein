@@ -1,0 +1,234 @@
+{
+  "top_similar_proteins": [
+    [
+      "Q9BXR6",
+      0.2653559148311615
+    ],
+    [
+      "P07357",
+      0.2645825743675232
+    ],
+    [
+      "P25311",
+      0.22806918621063232
+    ],
+    [
+      "P07358",
+      0.2141212373971939
+    ],
+    [
+      "P10643",
+      0.21318164467811584
+    ],
+    [
+      "P02748",
+      0.21123917400836945
+    ],
+    [
+      "P00736",
+      0.19483935832977295
+    ],
+    [
+      "P13671",
+      0.18155691027641296
+    ],
+    [
+      "Q96PD5",
+      0.1780855357646942
+    ],
+    [
+      "P05155",
+      0.17253971099853516
+    ]
+  ],
+  "function_predictions": {
+    "Protein class": {
+      "top_labels": [
+        [
+          "Plasma proteins",
+          9
+        ],
+        [
+          "Predicted secreted proteins",
+          9
+        ],
+        [
+          "Disease related genes",
+          7
+        ],
+        [
+          "Human disease related genes",
+          7
+        ],
+        [
+          "Predicted intracellular proteins",
+          4
+        ]
+      ],
+      "all_labels": [
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Predicted intracellular proteins",
+        "Predicted secreted proteins",
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Potential drug targets",
+        "Predicted secreted proteins",
+        "Transporters",
+        "Cancer-related genes",
+        "Plasma proteins",
+        "Predicted intracellular proteins",
+        "Predicted secreted proteins",
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Predicted secreted proteins",
+        "Cancer-related genes",
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Predicted secreted proteins",
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Predicted intracellular proteins",
+        "Predicted secreted proteins",
+        "Cancer-related genes",
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Potential drug targets",
+        "Predicted secreted proteins",
+        "Transporters",
+        "Enzymes",
+        "Metabolic proteins",
+        "Plasma proteins",
+        "Predicted membrane proteins",
+        "Predicted secreted proteins",
+        "Candidate cardiovascular disease genes",
+        "Disease related genes",
+        "Human disease related genes",
+        "Plasma proteins",
+        "Predicted intracellular proteins",
+        "Predicted secreted proteins"
+      ]
+    },
+    "Biological process": {
+      "top_labels": [
+        [
+          "Immunity",
+          7
+        ],
+        [
+          "Complement pathway",
+          6
+        ],
+        [
+          "Innate immunity",
+          6
+        ],
+        [
+          "Cytolysis",
+          5
+        ],
+        [
+          "Complement alternate pathway",
+          4
+        ]
+      ],
+      "all_labels": [
+        "Complement alternate pathway",
+        "Complement pathway",
+        "Cytolysis",
+        "Immunity",
+        "Innate immunity",
+        "Complement alternate pathway",
+        "Complement pathway",
+        "Cytolysis",
+        "Immunity",
+        "Innate immunity",
+        "Complement alternate pathway",
+        "Complement pathway",
+        "Cytolysis",
+        "Immunity",
+        "Innate immunity",
+        "Complement alternate pathway",
+        "Complement pathway",
+        "Cytolysis",
+        "Immunity",
+        "Innate immunity",
+        "Complement pathway",
+        "Cytolysis",
+        "Immunity",
+        "Innate immunity",
+        "Immunity",
+        "Blood coagulation",
+        "Complement pathway",
+        "Fibrinolysis",
+        "Hemostasis",
+        "Immunity",
+        "Innate immunity"
+      ]
+    },
+    "Molecular function": {
+      "top_labels": [
+        [
+          "Hydrolase",
+          1
+        ],
+        [
+          "Protease inhibitor",
+          1
+        ],
+        [
+          "Serine protease inhibitor",
+          1
+        ]
+      ],
+      "all_labels": [
+        "Hydrolase",
+        "Protease inhibitor",
+        "Serine protease inhibitor"
+      ]
+    },
+    "Disease involvement": {
+      "top_labels": [
+        [
+          "Disease variant",
+          4
+        ],
+        [
+          "Cancer-related genes",
+          3
+        ],
+        [
+          "Hemolytic uremic syndrome",
+          1
+        ],
+        [
+          "Age-related macular degeneration",
+          1
+        ]
+      ],
+      "all_labels": [
+        "Disease variant",
+        "Hemolytic uremic syndrome",
+        "Cancer-related genes",
+        "Cancer-related genes",
+        "Disease variant",
+        "Age-related macular degeneration",
+        "Disease variant",
+        "Cancer-related genes",
+        "Disease variant"
+      ]
+    }
+  },
+  "query_protein": "P08603",
+  "query_protein_annotations": {
+    "Protein class": "Cancer-related genes, Disease related genes, Human disease related genes, Plasma proteins, Predicted intracellular proteins, Predicted secreted proteins",
+    "Biological process": "Complement alternate pathway, Host-virus interaction, Immunity, Innate immunity",
+    "Disease involvement": "Age-related macular degeneration, Cancer-related genes, Disease variant, Hemolytic uremic syndrome"
+  }
+}

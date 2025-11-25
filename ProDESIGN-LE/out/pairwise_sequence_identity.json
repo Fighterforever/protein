@@ -1,0 +1,8 @@
+{
+  "proteins":179,
+  "rows_matrix":179,
+  "rows_long":32041,
+  "long_path":"ProDESIGN-LE\/out\/pairwise_sequence_identity_long.csv",
+  "matrix_path":"ProDESIGN-LE\/out\/pairwise_sequence_identity.csv",
+  "parquet_enabled":false
+}
